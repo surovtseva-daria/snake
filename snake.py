@@ -61,3 +61,6 @@ class Snake:
         else:
             return False
 
+    def eats_self(self):
+        return self.next_golova() in self.telo
+

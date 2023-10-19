@@ -55,11 +55,11 @@ def test_move_down_up():
     s.move()
     assert s.telo == [(16, 13)]
 
+
 def test_grow():
     s = Snake()
     s.grow()
     assert s.telo == [(15, 16), (15, 15)]
-
 
 
 def test_move_right_left():
@@ -78,3 +78,16 @@ def test_move_left_right():
     s.right()
     s.move()
     assert s.telo == [(13, 15)]
+
+
+def test_eats_self():
+    s = Snake()
+    s.grow()
+    s.grow()
+    s.grow()
+    s.left()
+    s.grow()
+    s.down()
+    s.grow()
+    s.right()
+    assert s.eats_self()

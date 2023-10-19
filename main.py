@@ -4,9 +4,9 @@ import snake
 import apple
 
 
-def game_not_over():
-    x, y = s.golova()
-    if 0 < x < field.size-1 and 0 < y < field.size-1:
+def game_not_over(sn: snake.Snake):
+    x, y = sn.golova()
+    if 0 < x < field.size-1 and 0 < y < field.size-1 and not sn.eats_self():
         return True
     else:
         return False
@@ -17,7 +17,7 @@ s = snake.Snake()
 a = apple.Apple()
 a.set_random_not(s.telo)
 
-while game_not_over():
+while game_not_over(s):
     if stddraw.hasNextKeyTyped():
         key = stddraw.nextKeyTyped()
         if key == 'a':
