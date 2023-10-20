@@ -20,4 +20,4 @@ class Apple:
     def draw(self):
         x, y = self.location
         stddraw.setPenColor(stddraw.RED)
-        stddraw.filledSquare(x+0.5, y+0.5, 0.5)
+        stddraw.filledCircle(x+0.5, y+0.5, 0.5)
